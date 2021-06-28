@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.vj.smartcity"
+    android:installLocation="auto">
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission
+        android:name="com.vj.smartcity.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.tecmanic.gogrocer.permission.MAPS_RECEIVE" />
+
+
+    <application
+        android:name="com.vj.smartcity.util.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/splashicon"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/splashicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.vj.smartcity.activity.FireOtpPageAuthentication"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vj.smartcity.activity.PaystackPayment"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.MapboxActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.FlagActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.GameWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.vj.smartcity.activity.AddressLocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" /> <!-- <activity -->
+        <activity
+            android:name="com.vj.smartcity.activity.DealActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.MainActivityAgain"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.AddAddressNew"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.ViewAllTopDeals"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.ForgetOtpVerify"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.AboutUs"
+            android:parentActivityName="com.vj.smartcity.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.Coupen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.Myorderdetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name="com.vj.smartcity.activity.CancelOrder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.vj.smartcity.activity.ForgotPassOtp"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.MyOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.NewPassword"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.RechargeWallet"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.ForgotPAssword"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.SelectAddress"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.OrderSummary"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+
+        <service android:name="com.vj.smartcity.activity.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_ZSspmZeVxQm5wP" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name="com.vj.smartcity.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.vj.smartcity.activity.AddAddress"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.ChooseLocatioin"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.OtpVerification"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarGreen" />
+        <activity
+            android:name="com.vj.smartcity.activity.OrderSuccessful"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.EmptyCart"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.PaymentDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.vj.smartcity.activity.InternetConnection"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.CategoryPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarGreen" />
+        <activity
+            android:name="com.vj.smartcity.activity.ProductDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarOrange" />
+        <activity
+            android:name="com.vj.smartcity.activity.Splash"
+            android:screenOrientation="portrait"
+            android:theme="@style/StatusBarWhite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
